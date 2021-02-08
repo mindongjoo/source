@@ -8,8 +8,8 @@
 <meta charset="utf-8" />
 <title>Tab Menu Animation Design - 탭 메뉴 애니메이션 디자인</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<link href="http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb" rel="stylesheet" />
-<link rel="stylesheet" href="include/css/style.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="include/css/style.css" />
 <link rel="stylesheet" href="include/css/tabs.css" />
 <script src="include/js/libs/modernizr.min.js"></script>
 <script src="include/js/libs/jquery.min.js"></script>
@@ -22,9 +22,45 @@
 </head>
 <body>
 <div id="page-wrap">
+	<h1>탭 메뉴 애니메이션 디자인 <span>Tab Menu Animation Design</span></h1>
+	<h2 class="blind"><a href="https://www.naver.com">naver.com</a></h2>
+    <div id="tab_design">
+        <a href="#contents" class="blind">탭 메뉴 건너뛰기</a>
+        <nav class="tab_menu clearfix">
+            <ul>
+                <li><a href="#clock"><img src="include/images/clock-icon.png"alt="">시계</a></li>
+                <li><a href="#weather"><img src="include/images/weather-icon.png"alt="">날씨</a></li>
+                <li><a href="#calender"><img src="include/images/calendar-icon.png"alt="">캘린더</a></li>
+                <li><a href="#chart"><img src="include/images/chart_pie-icon.png"alt="">차트</a></li>
+                <li><a href="#chat"><img src="include/images/chat-icon.png"alt="">채팅</a></li>
+            </ul>
+        </nav>
+        <div class="tab_contents">
+            <ul>
+                <li id="clock">
+                    <img src="include/images/clock-icon.png" width="128" height="128" alt="">시계
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </li>
+                <li id="weather">
+                    <img src="include/images/weather-icon.png"alt=""width="128" height="128">날씨
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </li>
+                <li id="calender">
+                    <img src="include/images/calendar-icon.png"alt=""width="128" height="128">캘린더
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </li>
+                <li id="chart">
+                    <img src="include/images/chart_pie-icon.png"alt=""width="128" height="128">차트
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </li>
+                <li id="chat">
+                    <img src="include/images/chat-icon.png"alt=""width="128" height="128">채팅
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </li>
+            </ul>
+        </div>
+    </div><!--e:#tab_design-->
 	
-	
-				
 </div><!-- e: #page-wrap -->	
 </body>
 </html>
