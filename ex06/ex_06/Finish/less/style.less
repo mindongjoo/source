@@ -1,0 +1,199 @@
+@charset "utf-8";
+@import "css/reset.css";
+@import "classes.less";
+
+// style.css - 스타일 통합 문서, 2012 © yamoo9.com
+// ----------------------------------------------------------------
+
+// ///////////////////////////////////////// 
+//	=Basic
+// /////////////////////////////////////////
+
+html, body { height: 100%; }
+a:link, a:visited { color: #4a4a4a; text-decoration: none; }
+a:hover, a:active { color: #1b1b1b; }
+
+
+// ///////////////////////////////////////// 
+//	=Gradient BG
+// /////////////////////////////////////////
+
+body {
+	background-color: #fff;
+	.rainbow-gradient(-45deg, gold, maroon, snow, black, gold, maroon, snow, black, gold); }
+
+#buttons_wrap {
+	// LESS 변수
+	@wrap_width: 60%;
+	
+	position: absolute;
+	width: @wrap_width;
+	margin: 100px (100% - @wrap_width)/2 0;
+	border: 1px solid #f8f8f8;
+	border-color: rgba(237, 237, 237, 0.4);
+	padding: 20px;
+	background: #e7e7e7;
+	background: rgba(237, 237, 237, 0.48);
+	text-align: center;
+	.box-shadow(0px, 0px, 4px, #787878); }
+
+#buttons_wrap a { margin-top: 10px; }
+
+
+// ///////////////////////////////////////// 
+//	=buttons class
+// /////////////////////////////////////////
+
+// LESS 변수
+@img_url: url(../images/button_bg.png); // 이미지 경로 변경
+
+@red_bc: #e80408; // 빨간색 버튼 시작 색상
+@red_ec: #6d0019; // 빨간색 버튼 끝 색상
+
+@orange_bc: #ffa13d;
+@orange_ec: #a04814;
+
+@yellow_bc: #fff496;
+@yellow_ec: #e5c600;
+
+@green_bc: #aefc6f;
+@green_ec: #4c6e1b;
+
+@blue_bc: #4FA7FF;
+@blue_ec: #0549A8;
+
+@navy_bc: #5064D3;
+@navy_ec: #281D6D;
+
+@purple_bc: #CC78ED;
+@purple_ec: #4B1166;
+
+@pink_bc: #FC679B;
+@pink_ec: #AA054A;
+
+// 버튼 코어 클래스
+.button {
+	position: relative;
+	text-decoration: none !important;
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid #ccc;
+	padding: 1em 1.5em;
+	background-color: #e0e0e0;
+	color: #232323;
+	font: 14px/1 Verdana, Arial, Sans-Serief;
+	text-shadow: 1px 1px #f2f2f2;
+	.inset-box-shadow(0px, 0px, 3px, #fff);
+	.button-gradient;
+	
+	&:hover, &:focus {
+		outline: 0;
+		.button-gradient(#eee, none, #fff, #c0c0c0); }
+	
+	&:active { top: 2px; }
+	
+	// 한글 확장 클래스
+	&.ko { font-family: '나눔 고딕', 'Nanum Gothic', '돋움', 'Dotum', Sans-Serief; }
+	
+	// 크기 확장 클래스
+	&.xx-small 		{ font-size: 10px; }
+	&.x-small 		{ font-size: 11px; }
+	&.small 		{ font-size: 12px; }
+	&.big	 		{ font-size: 18px; }
+	&.x-big 		{ font-size: 20px; }
+	&.xx-big 		{ font-size: 22px; }
+	
+	// 둥근테두리 확장 클래스
+	&.round			{ .border-radius(5px); }
+	&.rounder		{ .border-radius(15px); }
+	&.roundest		{ .border-radius(30px); }
+
+	// 애니메이션 확장 클래스
+	&.ani {
+		background-image: @img_url;
+		background-repeat: no-repeat;
+		background-position: left bottom, right top, 0 0;
+		.transition;
+		.button-gradient(#eee, @img_url, #fff, #c0c0c0);
+		
+		&:hover, &:focus {
+			background-position: right top, left bottom, 0 0;
+			.button-gradient(#eee, @img_url, #fff, #b0b0b0); } }
+	
+	// 컬러 확장 클래스
+	&.red {
+		border: 1px solid #8C484F; 
+		color: #121212 !important;
+		.button-gradient(@red_bc, none, @red_bc, @red_ec);
+		&:hover, &:focus { 
+			.button-gradient(@red_bc, none, lighten(@red_bc, 10%), lighten(@red_ec, 10%)); }
+		&.ani { .button-gradient(@red_bc, @img_url, @red_bc, @red_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@red_bc, @img_url, lighten(@red_bc, 10%), lighten(@red_ec, 10%)); } }
+	&.orange {
+		border: 1px solid #89614A;
+		color: #121212 !important;
+		.button-gradient(@orange_bc, none, @orange_bc, @orange_ec);
+		&:hover, &:focus {
+			.button-gradient(@orange_bc, none, lighten(@orange_bc, 10%), lighten(@orange_ec, 10%)); }
+		&.ani { .button-gradient(@orange_bc, @img_url, @orange_bc, @orange_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@orange_bc, @img_url, lighten(@orange_bc, 10%), lighten(@orange_ec, 10%)); } }
+	&.yellow {
+		border: 1px solid #d1c78c; 
+		color: #121212 !important;
+		.button-gradient(@yellow_bc, none, @yellow_bc, @yellow_ec);
+		&:hover, &:focus { 
+			.button-gradient(@yellow_bc, none, lighten(@yellow_bc, 10%), lighten(@yellow_bc, 10%)); }
+		&.ani { .button-gradient(@yellow_bc, @img_url, @yellow_bc, @yellow_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@yellow_bc, @img_url, lighten(@yellow_bc, 10%), lighten(@yellow_ec, 10%)); } }
+	&.green {
+		border: 1px solid #6c8e3b; 
+		color: #121212 !important;
+		.button-gradient(@green_bc, none, @green_bc, @green_ec);
+		&:hover, &:focus { 
+			.button-gradient(@green_bc, none, lighten(@green_bc, 10%), lighten(@green_bc, 10%)); 
+		}
+		&.ani { .button-gradient(@green_bc, @img_url, @green_bc, @green_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@green_bc, @img_url, lighten(@green_bc, 10%), lighten(@green_ec, 10%)); 
+		}  
+	}
+	&.blue {
+		border: 1px solid #3665ac; 
+		color: #121212 !important;
+		.button-gradient(@blue_bc, none, @blue_bc, @blue_ec);
+		&:hover, &:focus { 
+			.button-gradient(@blue_bc, none, lighten(@blue_ec, 10%), lighten(@blue_ec, 10%)); }
+		&.ani { .button-gradient(@blue_bc, @img_url, @blue_bc, @blue_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@blue_bc, @img_url, lighten(@blue_bc, 10%), lighten(@blue_ec, 10%)); } }
+	&.navy {
+		border: 1px solid #45596d; 
+		color: #121212 !important;
+		.button-gradient(@navy_bc, none, @navy_bc, @navy_ec);
+		&:hover, &:focus { 
+			.button-gradient(@navy_bc, none, lighten(@navy_bc, 10%), lighten(@navy_ec, 10%)); }
+		&.ani { .button-gradient(@navy_bc, @img_url, @navy_bc, @navy_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@navy_bc, @img_url, lighten(@navy_bc, 10%), lighten(@navy_ec, 10%)); } }
+	&.purple {
+		border: 1px solid #7c4073; 
+		color: #121212 !important;
+		.button-gradient(@purple_bc, none, @purple_bc, @purple_ec);
+		&:hover, &:focus { 
+			.button-gradient(@purple_bc, none, lighten(@purple_bc, 10%), lighten(@purple_ec, 10%)); }
+		&.ani { .button-gradient(@purple_bc, @img_url, @purple_bc, @purple_ec); }
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@purple_bc, @img_url, lighten(@purple_bc, 10%), lighten(@purple_ec, 10%)); } }
+	&.pink {
+		border: 1px solid #af6783; 
+		color: #121212 !important;
+		.button-gradient(@pink_bc, none, @pink_bc, @pink_ec);
+		&:hover, &:focus { 
+			.button-gradient(@pink_bc, none, lighten(@pink_bc, 10%), lighten(@pink_ec, 10%)); }
+		&.ani { .button-gradient(@pink_bc, @img_url, @pink_bc, @pink_ec); } 
+		&.ani:hover, &.ani:focus { 
+			.button-gradient(@pink_bc, @img_url, lighten(@pink_bc, 10%), lighten(@pink_ec, 10%)); } }
+}

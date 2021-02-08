@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "reset.css";
+@import "Sansation-fontfacekit/webfonts.css";
+/* style.css - 기본 스타일 문서, 2012 © yamoo9.com
+---------------------------------------------------------------- */
+/* ///////////////////////////////////////// 
+	=기본 스타일
+///////////////////////////////////////// */
+/* ///////////////////////////////////////// 
+	=#page-wrap
+///////////////////////////////////////// */
+#page-wrap {
+  width: 835px;
+  margin: 150px auto;
+  text-align: center;
+}
+h1 {
+  font-family: 'SansationLight';
+  color: #f4397d;
+}
+/* ///////////////////////////////////////// 
+	=.Global Classes
+///////////////////////////////////////// */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.ie6 .clearfix {
+  height: 1px;
+}
+.ie7 .clearfix {
+  min-height: 1px;
+}
+.blind {
+  visibility: hidden;
+  position: absolute;
+  top: -10000px;
+  height: 1px;
+  width: 1px;
+}

@@ -1,0 +1,334 @@
+// ------------------------------------------------------------
+//	LESS 	:: CSS3 - Classes
+// ------------------------------------------------------------
+// 	구성		:: LESS 변수 및 함수 선언
+//	라이센스	:: 2012 © yamoo9.com
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// LESS Variables, 2012 © yamoo9.com
+// ------------------------------------------------------------
+
+@pink			: #f4397d;
+@red			: #d81a1a;
+@yellow			: #ffe14d; 
+@orange			: #f28a2f;
+@green			: #86d51b;
+@cyan			: #1ac2d5;
+@blue			: #27b2ff;
+@deepblue		: #1934d5;
+@purple			: #5b19d5;
+@gold			: #e6ca76;
+@silver			: #bfc1bf;
+
+
+
+
+// ------------------------------------------------------------
+// CSS3 LESS Functions, 2012 © yamoo9.com
+// ------------------------------------------------------------
+
+// 웹폰트
+.font(@name, @url) {
+	@font-face {
+	    font-family: @name;
+	    src: url('@{url}.eot');
+	    src: url('@{url}.eot?iefix') format('eot'),
+	         url('@{url}.woff') format('woff'),
+	         url('@{url}.ttf') format('truetype'),
+	         url('@{url}.svg#webfontjSpbZQRv') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+}
+
+// 불투명도
+.opacity( @value: 1 ) {
+	-webkit-opacity: @value;
+	-khtml-opacity: @value;
+	-moz-opacity: @value;
+	opacity: @value;
+	@value_for_ie : @value * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{value_for_ie})"; // IE8(IE7 호환성보기의 경우..)
+	filter: ~"alpha(opacity=@{value_for_ie})"; // IE6-8
+}
+
+// 둥근 테두리 
+.border-radius( @radius : 4px ) {
+	-webkit-border-radius: @radius;
+	-khtml-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+.outline-radius( @radius : 4px ) {
+	-webkit-outline-radius: @radius;
+	-khtml-outline-radius: @radius;
+	-moz-outline-radius: @radius;
+	outline-radius: @radius;
+}
+
+// 테두리 이미지
+.border-image(@width:20px, @url) {
+	border-width: @width;
+	-webkit-border-image: url(@url) 20 20 20 20 repeat;
+	-moz-border-image: url(@url) 20 20 20 20 repeat;
+	border-image: url(@url) 20 20 20 20 repeat;
+}
+
+// 박스 그림자 
+.box-shadow( @param : #000 2px 2px 1px ) {
+	-webkit-box-shadow: @param;
+	-moz-box-shadow: @param;
+	box-shadow: @param;
+}
+
+// 박스 사이징
+.box-sizing( @type : border-box ) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	box-sizing: @type;	
+}
+
+// 반사 효과
+.box-reflect(@dir:below, @offset:-5px, @begin:transparent, @end: rgba(255, 255, 255, 0.3)) {
+	-webkit-box-reflect: 
+		@dir @offset -webkit-gradient(linear, left top, left bottom, color-stop(@begin), color-stop(@end)); // old WebKit
+	-webkit-box-reflect: 
+		@dir @offset -webkit-linear-gradient(top, @begin, @end); // WebKit
+}
+
+// 배경이미지 사이즈
+.background-size( @value : 100% ) {
+	-webkit-background-size: @value;
+	-moz-background-size: @value;
+	background-size: @value;
+}
+
+// 배경이미지가 시작되는 기준점
+.background-origin( @type : content-box ) {
+	-webkit-background-origin: @type;
+	-moz-background-origin: @type;
+	-o-background-origin: @type;
+	-ms-background-origin: @type;
+	background-origin: @type;
+}
+.background-clip( @type : content-box ) { 
+	-webkit-background-clip: @type;
+	-moz-background-clip: @type;
+	-o-background-clip: @type;
+	-ms-background-clip: @type;
+	background-clip: @type;
+}
+
+// 텍스트 테두리
+.text-stroke( 
+	@fill_color		: #fff, 
+	@stroke_color	: #d78965, 
+	@width			: 3px 
+) {
+	-webkit-text-fill-color: @fill_color;
+	text-fill-color: @fill_color;
+	-webkit-text-stroke-color: @stroke_color;
+	text-stroke-color: @stroke_color;
+	-webkit-text-stroke-width: @width;
+	text-stroke-width: @width;
+}
+
+// 텍스트 오버플로우
+.text-overflow(@type: overflow) { // or "clip"
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: @type;
+	-ms-text-overflow: @type;
+	text-overflow: @type; 
+}
+
+// 멀티 컬럼
+.column(
+	@count	: 3,
+	@gap	: 10px,
+	@width,
+	@rule
+) {
+	-webkit-column-count: @count;
+	-moz-column-count: @count;
+	-o-column-count: @count;
+	column-count: @count;
+	-webkit-column-gap: @gap;
+	-moz-column-gap: @gap;
+	-o-column-gap: @gap;
+	column-gap: @gap;	
+	-webkit-column-width: @width;
+	-moz-column-width: @width;
+	-o-column-width: @width;
+	column-width: @width;
+	-webkit-column-rule: @rule;
+	-moz-column-rule: @rule;
+	-o-column-rule: @rule;
+	column-rule: @rule;
+}
+
+// 그레디언트
+.linear-gradient( 
+	@begin	: #423d37, 
+	@end	: #1a1816,
+	@pos_b	: 0%,
+	@pos_e	: 100%
+) {
+	background-color: @begin + @end;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(@pos_b, @begin), color-stop(@pos_e, @end)); // old WebKit
+	background-image: -webkit-linear-gradient(top, @begin @pos_b, @end @pos_e);
+	background-image: -moz-linear-gradient(top, @begin @pos_b, @end @pos_e);
+	background-image: -o-linear-gradient(top, @begin @pos_b, @end @pos_e);
+	background-image: -ms-linear-gradient(top, @begin @pos_b, @end @pos_e);
+	background-image: linear-gradient(top, @begin @pos_b, @end @pos_e);
+}
+
+.radial-gradient(
+	@begin	: #423d37, 
+	@end	: #1a1816,
+	@pos_b	: 10%,
+	@pos_e	: 70%
+) {
+	background-color: @begin + @end;
+	background-image: -webkit-gradient(radial, center center, @pos_b, center center, @pos_e, from(@begin), to(@end));
+	background-image: -webkit-radial-gradient(center center, circle closest-corner, @begin @pos_b, @end @pos_e);
+	background-image: -moz-radial-gradient(center center, circle closest-corner, @begin @pos_b, @end @pos_e);
+	background-image: -ms-radial-gradient(center center, circle closest-corner, @begin @pos_b, @end @pos_e);
+	background-image: radial-gradient(center center, circle closest-corner, @begin @pos_b, @end @pos_e);
+}
+
+// 이중 선
+.double-borders( 
+	@color_one	: #25221f,
+	@color_two	: #423d37,
+	@radius		: 0
+) {
+	border: 1px solid @colorOne;
+	.box-shadow(0 0 0 1px @colorTwo);	
+	.border-radius( @radius );
+}
+
+// 트랜지션
+.transition( @param : all .4s ) {
+  	-webkit-transition: @param;
+	-moz-transition: @param;
+	-o-transition: @param;
+	-ms-transition: @param;
+	transition: @param;
+}
+
+// 트랜스폼
+.transform( @params ) {
+	-webkit-transform: @params;
+	-moz-transform: @params;
+	-o-transform: @params;
+	-ms-transform: @params;
+	transform: @params;
+}
+
+// 트랜스폼 중심점
+.transform-origin ( @x:center, @y:center ) {
+	-webkit-transform-origin: @x @y;
+	-moz-transform-origin: @x @y;
+	-ms-transform-origin: @x @y;
+	transform-origin: @x @y;
+}
+
+// 회전
+.rotate ( @deg ){
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+// 변형
+.skew ( @deg, @deg2 ){
+	-webkit-transform: skew(@deg, @deg2);
+	-moz-transform: skew(@deg, @deg2);
+	-ms-transform: skew(@deg, @deg2);
+	transform: skew(@deg, @deg2);
+}
+
+// 이동
+.translate ( @x, @y:0 ) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+// 3D 이동
+.translate3d ( @x, @y:0, @z:0 ) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	-moz-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+	transform: translate3d(@x, @y, @z);
+}
+
+// 크기
+.scale ( @factor ) {
+	-webkit-transform: scale(@factor);
+	-moz-transform: scale(@factor);
+	-ms-transform: scale(@factor);
+	transform: scale(@factor);
+}
+
+// 원근, 시점
+.perspective ( @value : 1000 ) {
+	-webkit-perspective: @value;
+	-moz-perspective: @value;
+	-ms-perspective: @value;
+	perspective: @value;
+}
+
+// 박스
+.box(
+	@orient	: horizontal,
+	@pack	: center,
+	@align	: center
+) {
+	display: -webkit-box;
+	display: -moz-box;	
+	display: box;
+	
+	-webkit-box-orient: @orient;
+	-moz-box-orient: @orient;
+	box-orient: @orient;
+		
+	-webkit-box-pack: @pack;
+	-moz-box-pack: @pack;
+	box-pack: @pack;		
+	
+	-webkit-box-align: @align;
+	-moz-box-align: @align;
+	box-align: @align;	
+}
+
+// 플렉스
+.flex( @val : 1 ) {
+	-webkit-box-flex: @val;
+	-moz-box-flex: @val;
+	box-flex: @val;
+}
+
+// 리사이즈
+.resize( @direction : both ) {
+	-webkit-resize: @direction;
+	-moz-resize: @direction;
+	resize: @direction;
+}
+
+// 셀렉션 
+.selection( @bg-color:@pink, @color:#fff ) {
+	::selection { // WebKit, Opera, IE9+
+		background-color: @bg-color;
+		color: @color;
+	}
+	::-moz-selection { // Firefox
+		background-color: @bg-color;
+		color: @color;
+	}
+}

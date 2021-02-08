@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko" class="no-js old ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko" class="no-js old ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="no-js old ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="no-js modern ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko" class="no-js modern"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /><![endif]-->
+<title>HTML5 Video Player Design - 비디오 플레이어 디자인</title>
+<link href="include/css/style.css" rel="stylesheet" />
+<script src="include/js/libs/modernizr.min.js"></script>
+<script src="include/js/libs/jquery.min.js"></script>
+<script src="include/js/libs/jquery.UI.min.js"></script>
+<link href="include/js/plugin/videoPlayer/jquery.videoPlayer.css" rel="stylesheet" />
+<script src="include/js/plugin/videoPlayer/jquery.videoPlayer.js"></script>
+<script src="include/js/script.js"></script>
+</head>
+<body>
+
+<div id="page-wrap">	
+	
+</div> <!-- e: #page-wrap -->
+
+
+
+<!-- ///////////////////////////////////////////////////////
+	아래 코드는 코드 작성 흐름을 보여주기 위한 참고 코드입니다.
+	참고하신 후에는 제거해주시고, 책의 진행대로 문서구조를 작성합니다. 
+//////////////////////////////////////////////////////// -->
+
+<figure class="video-container" style="display: none;"><!-- 피규어 래퍼 : 자바스크립트로 동적으로 생성되는 코드 -->
+		
+	<!-- 순수하게 HTML에 작성하는 코드 -->
+	<video id="yamoo9-video" poster="include/images/video-poster.jpg" controls width="835" height="417">
+		<source src="include/media/yamoo9-video.webm" type="video/webm; codec='VP8, Vorbis'" />
+		<source src="include/media/yamoo9-video.mp4" type="video/mp4; codec='avc1.42E01E, mp4a.40.2'" />
+		<a href="include/media/yamoo9-video.mp4">다운로드 : yamoo9-video.mp4</a>
+	</video>
+	
+	<!-- 비디오 컨트롤러 : 자바스크립트로 동적으로 생성되는 코드 -->
+	<div class="video-controls">
+		<a class="play-btn" title="재생/일시정지" accesskey="P"></a>
+		<div class="seek"></div>
+		<div class="timer">00:00</div>
+		<div class="volume-box">
+			<div class="volume-slider"></div>
+			<a class="volume-btn" title="음소거/음소거 해제" accesskey="M"></a>
+		</div>
+	</div><!-- e: .video-controls -->
+		
+</figure> <!-- e: .video-container -->
+
+</body>
+</html>

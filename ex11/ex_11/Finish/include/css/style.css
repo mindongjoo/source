@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "normalize.css";
+@import "fonts/stylesheet.css";
+/* style.css - 2012©yamoo9.com */
+
+/* =기본 스타일 */
+body {
+	background: #eaeaea url(../images/bg.jpg);
+	font: 75%/1.5 'TeXGyrePagellaItalic', Verdana, Sans-Serief;
+	color: #383838;
+}
+
+a:link, a:visited {color: #494c4b; text-decoration: none;}
+a:hover, a:active {color: #131715;}
+
+
+/* =전역 클래스 */
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.ie6 .clearfix,
+.ie7 .clearfix {
+	zoom: 1;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8">
+<title>response Grid DEMO</title>
+<link href="include/css/normalize.css" rel="stylesheet" />
+<link href="include/css/response.css" rel="stylesheet" />
+<style>
+	
+	.wrap { margin-top: 20px; }
+
+	[class^="col-"] { 
+		height: 200px;
+		margin-bottom: 20px;
+		color: #fff;
+		background: #3c3b34;
+		text-align: center;
+		font: 32px/200px Verdana;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<div class="wrap"> 								<!-- 전체를 감싸는 역할: .wrap -->
+		<div class="row">							<!-- 그리드 레이아웃 한 행: .row -->
+			<div class="col-3">col 3</div>			<!-- 그리드 레이아웃 컬럼 -->
+			<div class="col-4">col 4</div>			<!-- 그리드 레이아웃 컬럼 -->
+			<div class="col-5 last">col 5</div>		<!-- 그리드 레이아웃 컬럼 -->
+		</div>
+		<div class="row">
+			<div class="col-2">col 2</div>
+			<div class="col-6">col 6</div>
+			<div class="col-4 last">col 4</div>
+		</div>
+	</div>
+	
+</body>
+</html>

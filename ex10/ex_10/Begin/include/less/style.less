@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import "normalize.css";
+@import "response.css";
+@import "css3-classes.less";
+/* 
+	style.css - 기본 스타일 문서, 2012 © yamoo9.com
+	반응형 웹 디자인 (Responsible Web Design)
+---------------------------------------------------------------- */
+
+/* 데스크톱 */
+	
+
+/* 태블릿: 1024 이하 */
+@media handheld, only screen and (max-width: 1023px) {
+	
+}
+
+/* 스마트 폰: 767px 이하 */
+@media handheld, only screen and (max-width: 767px) {
+	
+}
+
+/* 아이폰 4 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+
+
+/* =Global Classes */
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	}
+	.ie6 .clearfix { height: 1px; }	// IE 6
+	.ie7 .clearfix { min-height: 1px; } // Ie 7
+	
+.blind {
+	visibility: hidden;
+	position: absolute;
+	top: -10000px;
+	height: 1px;
+	width: 1px;
+}

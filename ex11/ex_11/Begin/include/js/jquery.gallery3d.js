@@ -1,0 +1,1 @@
+/* jquery.galllery3d.js - 2012©yamoo9.com */
