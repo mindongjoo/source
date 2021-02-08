@@ -1,23 +1,15 @@
 @charset "utf-8";
 @import "reset.css";
-
-/* lavalamp.nav.css - 라바 램프 네비게이션 디자인 스타일, 2012 © yamoo9.com
-------------------------------------------------------------------- */
-
-/* ///////////////////////////////////////// 
-	=기본 스타일
-///////////////////////////////////////// */	
-
-
-/* ///////////////////////////////////////// 
-	=#nav
-///////////////////////////////////////// */	
-
-
-
-/* ///////////////////////////////////////// 
-	=Global Classes
-///////////////////////////////////////// */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+body{background:#eeece7;}
+h1{font: 52px/1 'Dancing Script', cursive;color: #a4834d;}
+h1+p{margin-bottom: 3.5em;}
+#page-wrap{width: 960px;margin: 30px auto;padding:3em;background:#fff;border-radius:20px ;box-shadow: 0px 0px 2px #62615f inset;}
+#navigation{padding: 3px;}
+#navigation li{float: left;border-right: 1px solid #eee;}
+#navigation li a{border: 0;padding: 18px;font:14px/1 Verdana;color: #a49e96;}
+#navigation li:last-child{border:0;}
+#navigation li a:hover,#navigation li a:focus,#navigation li.focus a{border-radius: 6px;background-image:linear-gradient(-90deg,#887963,#0b0a09);box-shadow: 0px 0px 2px #69635a;}
 
 .clearfix:after {
 	content: "";
