@@ -1,24 +1,24 @@
 @charset "utf-8";
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap');
 
 /* tooltip.css - 툴팁 디자인 스타일, 2012 © yamoo9.com
 ---------------------------------------------------------------- */
-
+body{padding: 150px;
+background: #2b2b2b url('../images/bg_tile.jpg');}
+h1{font-family: 'PT Sans', sans-serif;}
+a.tooltip{display: block;width: 100px;height: 100px;border:5px solid #4b4b4b;border-radius: 55px;}
 /* ///////////////////////////////////////// 
 	=기본 스타일
 ///////////////////////////////////////// */	
-
-
-/* ///////////////////////////////////////// 
-	=.gallery-nav
-///////////////////////////////////////// */	
-
-
-/* ///////////////////////////////////////// 
-	=.tooltip
-///////////////////////////////////////// */	
-
-
-/* ///////////////////////////////////////// 
-	=Global Classes
-///////////////////////////////////////// */
+.gallery-nav li{float: left; margin-right: 100px;}
+a.tooltip.photo1{background-image: url('../images/sussjini-bbo.jpg');}
+a.tooltip.photo2{background-image: url('../images/khk-artwork.png');}
+a.tooltip.photo3{background-image: url('../images/interview-yamoo9.png');}
+a.tooltip{background:#fff no-repeat center;background-size: cover;position: relative;}
+a.tooltip .tooltip-box{opacity: 0;width: 20em;padding:.8em;background:#111;position: absolute;margin-left: -10.4em;bottom:100px;border-radius: 15px 0px;left: 50%;transition:all .4s ease-in .3s;}
+a.tooltip .tooltip-title{color: #fff;}
+a.tooltip .tooltip-desc{margin-bottom: 0;font-size: 11px;text-align: justify;color: #bcbcbc;}
+a.tooltip .tooltip-box:before{content:' '; position: absolute; bottom: -10px;left: 120px; border-top: 10px solid #111; border-left:10px solid transparent;border-right:10px solid transparent;}
+a.tooltip:focus .tooltip-box,a.tooltip:hover .tooltip-box{opacity: 1;bottom: 90px;}
+a.tooltip:focus,a.tooltip:hover{border-color: #fff;} 
