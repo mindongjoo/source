@@ -1,15 +1,28 @@
 @charset "utf-8";
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
 /* banner.css - 배너 디자인 스타일, 2012 © yamoo9.com
 ---------------------------------------------------------------- */
-
+body{padding: 20px;background-color: #333;}
 /* ///////////////////////////////////////// 
 	=기본 스타일
 ///////////////////////////////////////// */	
+a.banner{position: relative;display: block;width: 728px;height: 176px;border: 3px solid #5555;
+background:url('../images/banner-arrow.png')no-repeat -100px 140px,
+url('../images/banner-photo.png')no-repeat -40px 220px,
+url('../images/banner-09.png')no-repeat -20px -380px,
+url('../images/banner-bg.png')no-repeat 0 0;transition:background-position .2s ease-in .2s;
+	-webkit-transition: background-position .2s ease-in .2s;
+	-moz-transition: background-position .2s ease-in .2s;}
+a.banner .banner-logo{
+	transition: all .4s ease-out .3s;
+	position: absolute;
+	top: 20px;left: 270px;opacity: 0;
+}
+a.banner .banner-desc{font:39px/0.9 'Nanum Pen Script', cursive;color: #4ec1cd;position: absolute;top: 35px;left: 175px;opacity: 0;}
 
-
-
-/* ///////////////////////////////////////// 
-	=.banner
-///////////////////////////////////////// */
+a.banner:hover, a.banner:focus{background-position:20px 140px,-40px 20px,-20px -90px,0 0;}
+a.banner:hover .banner-desc, a.banner:focus .banner-desc,
+a.banner:hover .banner-logo, a.banner:focus .banner-logo
+{opacity: 1;}
