@@ -1,0 +1,16 @@
+@charset "utf-8";
+@import "reset.css";
+body{
+	background-image: url(../images/bg.jpg);
+	background-size: cover;
+	color:antiquewhite;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 75%;
+	line-height: 1.5;
+	padding: 30px;
+	background-color:#333333;
+}
+h1,h2{color:aqua;}
+a.banner{display: block;
+	width: 728px;
+	height:176px;
+	border:3px soild red;}
